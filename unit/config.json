@@ -1,0 +1,20 @@
+{
+  "listeners": {
+    "*:443": {
+      "pass": "routes",
+      "tls": {
+        "certificate": "dev"
+      }
+    }
+  },
+  "routes": [
+    {
+      "match": {
+        "host": "plash.local"
+      },
+      "action": {
+        "share": "/www/$uri"
+      }
+    }
+  ]
+}

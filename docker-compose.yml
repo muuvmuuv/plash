@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  plash:
+    image: nginx/unit:1.27.0-minimal
+    container_name: plash
+    volumes:
+      - ./unit/:/docker-entrypoint.d/
+      - ./dist/:/www/:ro
+    ports:
+      - "443:443"
