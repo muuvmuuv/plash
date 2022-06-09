@@ -10,6 +10,7 @@
   "dependencies": {
     "@fontsource/inter": "^4.5.11",
     "dayjs": "^1.11.3",
+    "three": "^0.141.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {
