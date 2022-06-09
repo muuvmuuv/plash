@@ -12,5 +12,12 @@
 html,
 body,
 #app {
-  @apply w-full h-full bg-transparent overscroll-none pointer-events-none;
+  @apply w-full h-full overscroll-none pointer-events-none bg-transparent;
+}
+
+body {
+  background: var(--background);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

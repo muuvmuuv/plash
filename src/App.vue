@@ -1,13 +1,22 @@
 <script setup>
-// :)
+import { computed, onMounted, ref } from "vue"
+import dayjs from "dayjs"
+
+const date = ref(dayjs())
+const formated = computed(() => date.value.format("LLLL:ss"))
+
+onMounted(() => {
+  setInterval(() => {
+    date.value = dayjs()
+  }, 1000)
+})
 </script>
 
 <template>
-  <main class="w-full h-full flex justify-center items-center">
-    <h1 class="text-4xl">Hi</h1>
+  <header class="w-full flex justify-center pt-24">
+    <h1 class="text-4xl tabular-nums text-slate-50 opacity-40">{{ formated }}</h1>
+  </header>
+  <main>
+    <!-- <section></section> -->
   </main>
 </template>
-
-<style lang="scss">
-// : )
-</style>
