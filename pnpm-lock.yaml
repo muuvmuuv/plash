@@ -5,16 +5,19 @@ specifiers:
   '@vitejs/plugin-vue': ^2.3.3
   autoprefixer: ^10.4.7
   dayjs: ^1.11.3
+  gsap: ^3.10.4
   postcss: ^8.4.14
   sass: ^1.52.3
   tailwindcss: ^3.0.24
   three: ^0.141.0
   vite: ^2.9.10
+  vite-plugin-glsl: ^0.1.2
   vue: ^3.2.37
 
 dependencies:
   '@fontsource/inter': 4.5.11
   dayjs: 1.11.3
+  gsap: 3.10.4
   three: 0.141.0
   vue: 3.2.37
 
@@ -25,6 +28,7 @@ devDependencies:
   sass: 1.52.3
   tailwindcss: 3.0.24
   vite: 2.9.10_sass@1.52.3
+  vite-plugin-glsl: 0.1.2
 
 packages:
 
@@ -69,6 +73,14 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@rollup/pluginutils/4.2.1:
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
     dev: true
 
   /@vitejs/plugin-vue/2.3.3_vite@2.9.10+vue@3.2.37:
@@ -563,6 +575,10 @@ packages:
       is-glob: 4.0.3
     dev: true
 
+  /gsap/3.10.4:
+    resolution: {integrity: sha512-6QatdkKxXCMfvCW4rM++0RqyLQAzFX5nwl3yHS0XPgkZBkiSEY3VZVbMltrdtsbER/xZonLtyHt684wRp4erlQ==}
+    dev: false
+
   /has/1.0.3:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
     engines: {node: '>= 0.4.0'}
@@ -839,8 +855,20 @@ packages:
       is-number: 7.0.0
     dev: true
 
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
+    dev: true
+
   /util-deprecate/1.0.2:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
+    dev: true
+
+  /vite-plugin-glsl/0.1.2:
+    resolution: {integrity: sha512-RFwoYn8EQFXp4YygIyt8Ex3bQE5/v5927AF0MAgrNfX4NRPlDAX12ciWlpVs4ObKLYro49fctnou4+fajO0FOg==}
+    engines: {node: '>= 14.17.0', npm: '>= 6.14.13'}
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      tslib: 2.4.0
     dev: true
 
   /vite/2.9.10_sass@1.52.3:
