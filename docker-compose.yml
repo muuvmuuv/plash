@@ -4,6 +4,7 @@ services:
   plash:
     image: nginx/unit:1.27.0-minimal
     container_name: plash
+    restart: always
     volumes:
       - ./unit/:/docker-entrypoint.d/
       - ./dist/:/www/:ro
