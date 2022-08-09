@@ -14,6 +14,6 @@ createApp(App).mount("#app")
 
 const style = document.createElement("style")
 style.innerHTML = `:root { 
-  --background: ${import.meta.env.DEV ? "url('/bg.jpg')" : "transparent"}; 
+  --background: ${import.meta.env.DEV ? "silver" : "transparent"}; 
 }`
 document.head.appendChild(style)

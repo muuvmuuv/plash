@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.12",
+    "axios": "^0.27.2",
+    "axios-cache-interceptor": "^0.10.7",
     "dayjs": "^1.11.4",
     "gsap": "^3.10.4",
     "three": "^0.143.0",
