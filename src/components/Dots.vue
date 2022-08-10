@@ -15,7 +15,7 @@ const dots = Array.from({ length: 50 })
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "sass:math";
 
 .dot-wrapper {

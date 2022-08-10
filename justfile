@@ -2,6 +2,11 @@
 run:
   docker compose up -d
 
+# Rebuild and restart
+rebuild:
+  pnpm build
+  docker compose restart
+
 # Show container logs
 logs:
   docker compose logs -f --tail=100

@@ -4,10 +4,11 @@ import App from "./App.vue"
 
 import "./index.scss"
 
-import localizedFormat from "dayjs/plugin/localizedFormat"
 import dayjs from "dayjs"
-import "dayjs/locale/de"
+import localizedFormat from "dayjs/plugin/localizedFormat"
 dayjs.extend(localizedFormat)
+
+import "dayjs/locale/de"
 dayjs.locale("de")
 
 createApp(App).mount("#app")

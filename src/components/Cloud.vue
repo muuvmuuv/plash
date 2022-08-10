@@ -1,70 +1,77 @@
 <script setup lang="ts">
+import { computed } from "vue"
+
 export interface Props {
   type: "hot" | "cloudy" | "stormy" | "breezy" | "night"
+  size?: number
 }
 
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  size: 150,
+})
 </script>
 
 <template>
-  <div v-if="type === 'hot'" class="hot">
-    <span class="sun"></span>
-    <span class="sunx"></span>
-  </div>
+  <div :style="{ '--size': `${size}px` }">
+    <div v-if="type === 'hot'" class="hot">
+      <span class="sun"></span>
+      <span class="sunx"></span>
+    </div>
 
-  <div v-else-if="type === 'cloudy'" class="cloudy">
-    <span class="cloud"></span>
-    <span class="cloudx"></span>
-  </div>
+    <div v-else-if="type === 'cloudy'" class="cloudy">
+      <span class="cloud"></span>
+      <span class="cloudx"></span>
+    </div>
 
-  <div v-else-if="type === 'stormy'" class="stormy">
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <span class="snowe"></span>
-    <span class="snowex"></span>
-    <span class="stick"></span>
-    <span class="stick2"></span>
-  </div>
+    <div v-else-if="type === 'stormy'" class="stormy">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <span class="snowe"></span>
+      <span class="snowex"></span>
+      <span class="stick"></span>
+      <span class="stick2"></span>
+    </div>
 
-  <div v-else-if="type === 'breezy'" class="breezy">
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <span class="cloudr"></span>
-  </div>
+    <div v-else-if="type === 'breezy'" class="breezy">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <span class="cloudr"></span>
+    </div>
 
-  <div v-else-if="type === 'night'" class="night">
-    <span class="moon"></span>
-    <span class="spot1"></span>
-    <span class="spot2"></span>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <div v-else-if="type === 'night'" class="night">
+      <span class="moon"></span>
+      <span class="spot1"></span>
+      <span class="spot2"></span>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 div {
-  width: 130px;
-  height: 130px;
   border-radius: 9999%;
   position: relative;
+  width: var(--size);
+  height: var(--size);
 }
 
 .hot {
@@ -79,8 +86,8 @@ div {
   position: absolute;
   top: -10%;
   left: 65%;
-  width: 50px;
-  height: 50px;
+  width: calc(var(--size) * 0.3);
+  height: calc(var(--size) * 0.3);
   border-radius: 100%;
   background: linear-gradient(
     to bottom left,
@@ -95,8 +102,8 @@ div {
   position: absolute;
   top: 30%;
   left: 45%;
-  width: 10px;
-  height: 10px;
+  width: calc(var(--size) * 0.06);
+  height: calc(var(--size) * 0.06);
   border-radius: 100%;
   background-color: #fff;
   opacity: 0.2;
@@ -113,8 +120,8 @@ div {
   position: absolute;
   top: 5%;
   left: 70%;
-  width: 60px;
-  height: 20px;
+  width: calc(var(--size) * 0.4);
+  height: calc(var(--size) * 0.1);
   border-radius: 10px;
   background-color: rgba(129, 212, 250, 1);
   box-shadow: 1px 1px 30px rgba(0, 151, 167, 1);
@@ -124,8 +131,8 @@ div {
   position: absolute;
   top: 23%;
   left: 55%;
-  width: 60px;
-  height: 20px;
+  width: calc(var(--size) * 0.4);
+  height: calc(var(--size) * 0.15);
   border-radius: 10px;
   background-color: rgba(129, 212, 250, 1);
   animation: move 3s infinite linear;
@@ -201,8 +208,8 @@ div {
   position: absolute;
   top: 60%;
   left: 40%;
-  width: 40px;
-  height: 40px;
+  width: calc(var(--size) * 0.2);
+  height: calc(var(--size) * 0.2);
   border-radius: 60px;
   background-color: #ddd;
 }
@@ -210,8 +217,8 @@ div {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 15px;
-  height: 15px;
+  width: calc(var(--size) * 0.14);
+  height: calc(var(--size) * 0.14);
   border-radius: 15px;
   background-color: #bbb;
 }
@@ -220,7 +227,7 @@ div {
   top: 60%;
   left: 40%;
   width: 3px;
-  height: 15px;
+  height: calc(var(--size) * 0.1);
   transform: rotate(-45deg);
   background-color: #333;
   z-index: -10;
@@ -230,7 +237,7 @@ div {
   top: 60%;
   left: 70%;
   width: 3px;
-  height: 15px;
+  height: calc(var(--size) * 0.1);
   transform: rotate(45deg);
   background-color: #333;
   z-index: -10;
@@ -247,8 +254,8 @@ div {
   position: absolute;
   top: 5%;
   left: 60%;
-  width: 60px;
-  height: 20px;
+  width: calc(var(--size) * 0.55);
+  height: calc(var(--size) * 0.2);
   border-radius: 10px;
   background-color: rgba(96, 125, 139, 1);
   box-shadow: 1px 1px 30px rgba(84, 110, 122, 1);
@@ -306,8 +313,8 @@ div {
   position: absolute;
   top: -10%;
   left: 65%;
-  width: 70px;
-  height: 70px;
+  width: calc(var(--size) * 0.5);
+  height: calc(var(--size) * 0.5);
   border-radius: 100%;
   background: rgba(255, 241, 118, 1);
   box-shadow: 1px 1px 30px rgba(224, 224, 224, 1);
@@ -385,7 +392,7 @@ div {
 }
 @keyframes move {
   50% {
-    transform: translateX(-10px);
+    transform: translateX(calc(var(--size) * 0.125 * -1));
   }
 }
 @keyframes fall {

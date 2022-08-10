@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .fairy {
   width: var(--fairy-size);
   height: var(--fairy-size);
