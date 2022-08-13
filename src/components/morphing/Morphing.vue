@@ -20,7 +20,7 @@ class THREEScene {
     this.camera()
     this.addToScene()
     this.createParticles()
-    this.createBackground()
+    // this.createBackground()
     this.eventListeners()
     this.render()
     this.animate()
@@ -62,19 +62,7 @@ class THREEScene {
     const far = 10000
     const aspectRatio = this.viewport.aspectRatio
     this.camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far)
-    //this.camera = new THREE.OrthographicCamera(
-    //  this.viewport.width / -2,
-    //this.viewport.width / 2,
-    //this.viewport.height / 2,
-    //this.viewport.height / -2,
-    //1,
-    //1000
-    //);
     this.camera.position.set(0, 0, 10)
-    //this.controls = new THREE.OrbitControls(
-    //  this.camera,
-    //this.renderer.domElement
-    //);
   }
 
   addToScene() {
@@ -123,7 +111,7 @@ class THREEScene {
 
     const mesh = new THREE.Mesh(geometry, this.backgroundMaterial)
     mesh.position.z = -2
-    this.scene.add(mesh)
+    // this.scene.add(mesh)
   }
 
   render() {
@@ -131,7 +119,7 @@ class THREEScene {
     this.renderer.render(this.scene, this.camera)
     this.material.uniforms.u_time.value = this.clock.getElapsedTime()
     this.pointsMaterial.uniforms.u_time.value = this.clock.getElapsedTime()
-    this.backgroundMaterial.uniforms.u_time.value = this.clock.getElapsedTime()
+    // this.backgroundMaterial.uniforms.u_time.value = this.clock.getElapsedTime()
     this.points.rotation.y += 0.005
 
     requestAnimationFrame(() => {
