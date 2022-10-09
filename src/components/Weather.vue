@@ -110,7 +110,7 @@ onMounted(() => {
           )
         "
       ></Cloud>
-      <div class="feel text-6xl font-extralight tabular-nums slashed-zero absolute top-2">
+      <div class="feel text-6xl font-extralight tabular-nums absolute top-2">
         {{ Math.round(weather.main.feels_like) }}&deg;
       </div>
     </div>
@@ -120,9 +120,7 @@ onMounted(() => {
         <div class="w-8">
           {{ dayjs(f.dt_txt).format("dd") }}
         </div>
-        <div class="font-light tabular-nums slashed-zero">
-          {{ f.main.feels_like }}&deg;
-        </div>
+        <div class="w-8 font-light tabular-nums">{{ f.main.feels_like }}&deg;</div>
         <Cloud
           class="ml-2 -mt-0.5 opacity-70"
           :type="getWeatherType(f.weather[0].main, f.main.temp, f.main.feels_like)"
