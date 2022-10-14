@@ -28,7 +28,10 @@ class THREEScene {
 
   setup() {
     this.scene = new THREE.Scene()
-    this.renderer = new THREE.WebGLRenderer({ antialias: true })
+    this.renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+    })
     this.renderer.setSize(this.viewport.width, this.viewport.height)
     this.renderer.setPixelRatio = window.devicePixelRatio
     scene.value.appendChild(this.renderer.domElement)
