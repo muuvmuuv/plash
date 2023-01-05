@@ -2,5 +2,6 @@ pnpm-debug.log
 node_modules
 dist
 certs
+public/*.mp4
 unit/*.pem
 .env
