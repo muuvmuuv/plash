@@ -1,17 +1,25 @@
-# Run in docker
-run:
+# Run docker
+up:
   docker compose up -d
 
 # Rebuild and restart
 rebuild:
   pnpm build
+  swift build --package-path api
   docker compose restart
+
+# Start and run the api directly
+api:
+  swift run --package-path api
+# Start and ... watch for changes
+api-watch:
+  ls **/*.swift | entr -r swift run --package-path api
 
 # Show container logs
 logs:
   docker compose logs -f --tail=100
 
-# Create certificate
+# Create local certificate
 cert:
   mkdir -p certs
   mkcert -ecdsa \
