@@ -15,10 +15,6 @@ api:
 api-watch:
   ls **/*.swift | entr -r swift run --package-path api
 
-# Show container logs
-logs:
-  docker compose logs -f --tail=100
-
 # Create local certificate
 cert:
   mkdir -p certs

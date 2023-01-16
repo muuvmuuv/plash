@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   plash:
-    image: nginx/unit:1.30.0-minimal
+    image: nginx/unit:1.29.0-minimal
     container_name: plash
     restart: always
     volumes:

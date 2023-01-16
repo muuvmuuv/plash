@@ -1,5 +1,6 @@
 pnpm-debug.log
 node_modules
+swift/
 dist
 certs
 public/*.mp4

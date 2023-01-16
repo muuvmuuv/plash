@@ -10,20 +10,18 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
+    "@rive-app/webgl": "^1.0.93",
     "axios": "^1.2.2",
     "axios-cache-interceptor": "^1.0.0",
     "dayjs": "^1.11.7",
-    "gsap": "^3.11.4",
-    "three": "^0.148.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
     "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.21",
     "sass": "^1.57.1",
     "tailwindcss": "^3.2.4",
-    "vite": "^4.0.4",
-    "vite-plugin-glsl": "^1.0.2"
+    "vite": "^4.0.4"
   }
 }
